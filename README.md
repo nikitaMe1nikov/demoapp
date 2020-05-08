@@ -6,4 +6,4 @@ Run `npm install` or `yarn install`
 
 ## Start dev server
 
-Run `npm run dev` or `yarn dev` and open browser localhost:8000
+Run `npm run dev` or `yarn dev` and open browser localhost:3000
