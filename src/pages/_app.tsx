@@ -1,6 +1,7 @@
 import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
+import styled from 'styled-components';
 import { Provider } from 'react-redux';
 import { Grommet } from 'grommet';
 import withRedux, { ReduxWrapperAppProps } from 'next-redux-wrapper';
@@ -8,25 +9,16 @@ import makeStore from 'Modules/makeStore';
 import GlobalStyles from 'GlobalStyles';
 import theme from 'theme';
 
+const StyledGrommet = styled(Grommet)`
+  display: flex;
+  min-height: 100%;
+`;
+
 class MyApp extends App<ReduxWrapperAppProps> {
-  // static getInitialProps = async ({ Component, ctx }) => {
-  //   console.log('App getInitialProps');
-
-  //   return {
-  //     pageProps: {
-  //       // Call page-level getInitialProps
-  //       ...(Component.getInitialProps ? await Component.getInitialProps(ctx) : {}),
-  //       // Some custom thing for all pages
-  //       pathname: ctx.pathname,
-  //     },
-  //   };
-  // };
-
   render() {
     const { Component, pageProps, store } = this.props;
-    // console.log('MyApp');
     return (
-      <Grommet theme={theme} full>
+      <StyledGrommet theme={theme}>
         <Provider store={store}>
           <Head>
             <title>Demoshop</title>
@@ -39,7 +31,7 @@ class MyApp extends App<ReduxWrapperAppProps> {
           <GlobalStyles />
           <Component {...pageProps} />
         </Provider>
-      </Grommet>
+      </StyledGrommet>
     );
   }
 }

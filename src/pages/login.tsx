@@ -41,9 +41,8 @@ const Login: NextPage = () => {
   const isSmall = size === 'small';
 
   return (
-    <Box fill align="center" justify="center" background="background-back">
+    <Box width={{ min: '100%' }} align="center" justify="center" background="background-back">
       <ModalContainer
-        height={isSmall ? 'full' : 'modalHeight'}
         width={isSmall ? 'full' : 'modalWidth'}
         background="background-front"
         round={isSmall ? '0' : 'medium'}
@@ -55,14 +54,14 @@ const Login: NextPage = () => {
               Вход в личный кабинет
             </Heading>
           </Box>
-          <Box height="432px" align="center" justify="between" pad={{ horizontal: '114px' }}>
+          <Box height="430px" align="center" justify="between" pad={{ horizontal: '114px' }}>
             <Box width="250px" flex={{ shrink: 0 }}>
               <Box margin={{ top: 'large' }}>
                 <FormField name="login" label="Логин" required validate={VALIDATORS.LOGIN}>
                   <TextInput size="large" name="login" placeholder="user@mail.ru" />
                 </FormField>
               </Box>
-              <Box margin={{ top: 'xsmall' }}>
+              <Box margin={{ top: 'medium' }}>
                 <FormField name="password" label="Пароль" required validate={VALIDATORS.PASSWORD}>
                   <TextInput size="large" name="password" type="password" placeholder="*********" />
                 </FormField>

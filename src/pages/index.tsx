@@ -73,7 +73,7 @@ const App: NextPage<IAppProps> = ({ query }) => {
   );
 
   return (
-    <Box fill align="center" justify="center" background="background-back">
+    <Box width={{ min: '100%' }} align="center" background="background-back" pad={{ top: '300px' }}>
       <Box overflow="hidden">
         <Tabs justify="start" activeIndex={activeIndex} onActive={onActive}>
           <Tab title={<Text size="medium">Курсы валют</Text>}>

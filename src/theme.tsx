@@ -16,6 +16,7 @@ const fontSizing = (factor) => ({
 });
 
 const colors = {
+  white: '#fff',
   brand: '#1A237E',
   'background-back': {
     light: '#E1E1E1',
@@ -165,8 +166,9 @@ export default {
     },
     error: {
       size: 'small',
-      margin: { horizontal: '0' },
+      margin: { horizontal: '0', bottom: '0' },
     } as any,
+    margin: '0',
   },
 
   button: {
@@ -178,9 +180,10 @@ export default {
         },
       },
     },
-    extend: `
-      font-size: 18px;
-    `,
+    // extend: `
+    //   font-size: 18px;
+    // `,
+    color: { dark: colors.white, light: colors.brand },
   },
 
   tab: {
@@ -222,8 +225,8 @@ export default {
       horizontal: '0',
     },
     pad: {
-      bottom: 'xsmall',
-      top: 'xsmall',
+      bottom: '10px',
+      top: '10px',
       horizontal: 'large',
     },
   },
